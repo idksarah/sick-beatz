@@ -4,13 +4,17 @@ var input = document.querySelector("#file-upload");
 var doneButton = document.querySelector(".done");
 var uploadPage = document.querySelector(".uploadPage");
 var playerPage = document.querySelector(".playerPage");
+var uploadedSongDisplay = document.querySelector(".uploadedSongDisplay");
+var songContainerName = document.querySelector(".songContainerName");
+var songContainerArtist = document.querySelector(".songContainerArtist");
+var songContainerLength = document.querySelector(".songContainerLength");
 var songList = [];
 var songCounter = 0;
 function song(filename, fileURL, fileLength, artist) {
     if (artist === void 0) { artist = "n/a"; }
     this.fileName = filename;
     this.fileURL = fileURL;
-    this.Length = fileLength;
+    this.length = fileLength;
     this.artist = artist || "n/a";
 }
 function storeSong() {
@@ -34,11 +38,19 @@ function handleAudioFile(file) {
     };
     reader.readAsArrayBuffer(file);
 }
+function updateSongDisplays(song) {
+    console.log(song);
+    songContainerName.textContent = song.fileName;
+    songContainerArtist.textContent = song.artist;
+    songContainerLength.textContent = song.length;
+}
 //
 input.addEventListener('change', function () {
     storeSong();
     if (songList[songCounter]) {
         handleAudioFile(songList[songCounter]);
+        uploadedSongDisplay.classList.remove("hidden");
+        updateSongDisplays(songList[songCounter]); //probably an issue with that stupid extra begining file??? idk lol
         songCounter++;
     }
 });

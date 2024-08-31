@@ -21,6 +21,10 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+.text {
+    color: rgb(61, 56, 56);
+}
+
 /* uploadPage */
 
 .uploadPage {
@@ -56,6 +60,11 @@ input[type="file"] {
     display: none;
 }
 
+.done {
+    background-color: rgb(224, 177, 177);
+    border: 3px;
+}
+
 .custom-file-upload {
     border: 1px solid #ccc;
     display: inline-block;
@@ -63,7 +72,8 @@ input[type="file"] {
     cursor: pointer;
 }
 
-.uploadSongDisplay {
+.uploadedSongDisplay {
+    background-color: rgb(247, 246, 246);
 }
 
 .uploadedSongs {
