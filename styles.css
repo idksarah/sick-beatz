@@ -4,7 +4,7 @@ body {
     margin: 0;
 }
 
-.content {
+.content .uploadPage .playerPage{
     height: 100vh;
     width: 100%;
     align-items: center;
@@ -13,33 +13,68 @@ body {
     flex-direction: column;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+.text {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* uploadPage */
+
+.uploadPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.uploadButtons {
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+    margin-top: 15em;
+}
+
+.upload {
+    margin-right: 2em;
+}
+
 .cdPlayer {
-    height: 80vh;
-    width: 80vh;
+    height: 90vh;
+    width: auto;
 }
 
 .imgWrapper{
     display: inline-block;
-}
-
-.clickable-area {   
-  position: absolute;
-  background-color: rgba(255, 0, 0, 0.5);
-  cursor: pointer;
-  z-index: 10;
-}
-
-.input{
-    z-index: 10;
-    margin-bottom: -15vh;
+    margin-top: -5em;
 }
 
 input[type="file"] {
     display: none;
 }
+
 .custom-file-upload {
     border: 1px solid #ccc;
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
+}
+
+/* playerPage */
+
+.playerPage {
+    display: flex;
+}
+
+.cd {
+    height: 40vh; /* not adjusting to viewport height but whatev i guess*/
+    margin-right: 5vh;
+}
+
+.nowPlaying {
+    background-color: rgb(177, 207, 224);
+    padding: .5em;
 }

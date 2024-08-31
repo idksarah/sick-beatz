@@ -9,12 +9,33 @@
 </head>
 <body>
     <div class="content">
-        <label for="file-upload" class="custom-file-upload">
-            <i class=""></i> Upload a s0ng! (A .mp3, wav, or .m4a)
-        </label>
-        <input id="file-upload" type="file" accept=".mp3, .wav, .m4a",/>
-        <div class="imgWrapper">
-            <img src="./pics/cd-player.png" class="cdPlayer"></img>
+        <div class="uploadPage">
+            <div class="uploadButtons">
+                <div class="upload">
+                    <label for="file-upload" class="custom-file-upload">
+                        <i class="text"></i> Up1oad a s0ng! (.mp3, wav, or .m4a)
+                    </label>
+                    <input id="file-upload" type="file" accept=".mp3, .wav, .m4a",/>
+                </div>
+                <button class="done text">don3? :3</button>
+            </div>
+            <div class="imgWrapper">
+                <img src="./pics/cd-player.png" class="cdPlayer"></img>
+            </div>
+        </div>
+     <div class="playerPage hidden">
+            <img src="./pics/cd.png" class="cd">
+            <div class="player">
+                <p class="nowPlaying text">Now Playing</p>
+                <div class="song1 text">
+                    <div class="song1LeftText text">
+                        <p class="song1Name text">name</p>
+                        <p class="song1Artist text">artist</p>
+                    </div>
+                    <p class="length text">length</p>
+                    <input type="checkbox">
+                </div>
+            </div>
         </div>
     </div>
 </body>

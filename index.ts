@@ -1,4 +1,12 @@
+//ermmmm. should ahve the cd player on the playingpage and the upload/cd burning page need to be combined (after the first song shrink the cd player and add a song list)
+
+const body = document.querySelector<HTMLBodyElement>("body");
 const input = document.querySelector<HTMLInputElement>("#file-upload");
+const doneButton = document.querySelector<HTMLButtonElement>(".done");
+
+const uploadPage = document.querySelector<HTMLDivElement>(".uploadPage");
+const playerPage = document.querySelector<HTMLDivElement>(".playerPage");
+
 let songList = [];
 let songCounter = 0;
 
@@ -41,3 +49,12 @@ input.addEventListener('change', () => {
         songCounter++;
     }
 })
+
+doneButton.addEventListener('click', () => {
+    if(songList.length >= 2) { //should be 1 but we have a bug and i'm running with it
+        uploadPage.remove();
+        playerPage.classList.remove("hidden");
+    } else {
+        alert('pls upload a song first!'); //turn into an html element
+    }
+});

@@ -1,4 +1,9 @@
+//ermmmm. should ahve the cd player on the playingpage and the upload/cd burning page need to be combined (after the first song shrink the cd player and add a song list)
+var body = document.querySelector("body");
 var input = document.querySelector("#file-upload");
+var doneButton = document.querySelector(".done");
+var uploadPage = document.querySelector(".uploadPage");
+var playerPage = document.querySelector(".playerPage");
 var songList = [];
 var songCounter = 0;
 function song(filename, fileURL, fileLength, artist) {
@@ -35,5 +40,14 @@ input.addEventListener('change', function () {
     if (songList[songCounter]) {
         handleAudioFile(songList[songCounter]);
         songCounter++;
+    }
+});
+doneButton.addEventListener('click', function () {
+    if (songList.length >= 2) { //should be 1 but we have a bug and i'm running with it
+        uploadPage.remove();
+        playerPage.classList.remove("hidden");
+    }
+    else {
+        alert('pls upload a song first!'); //turn into an html element
     }
 });
