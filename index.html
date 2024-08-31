@@ -10,17 +10,30 @@
 <body>
     <div class="content">
         <div class="uploadPage">
-            <div class="uploadButtons">
-                <div class="upload">
-                    <label for="file-upload" class="custom-file-upload">
-                        <i class="text"></i> Up1oad a s0ng! (.mp3, wav, or .m4a)
-                    </label>
-                    <input id="file-upload" type="file" accept=".mp3, .wav, .m4a",/>
+            <div class="uploadButtonsImage">
+                <div class="uploadButtons">
+                    <div class="upload">
+                        <label for="file-upload" class="custom-file-upload">
+                            <i class="text"></i> Up1oad a s0ng! (.mp3, wav, or .m4a)
+                        </label>
+                        <input id="file-upload" type="file" accept=".mp3, .wav, .m4a",/>
+                    </div>
+                    <button class="done text">click h3re if ur don3! :3</button>
                 </div>
-                <button class="done text">don3? :3</button>
+                <div class="imgWrapper">
+                    <img src="./pics/cd-player.png" class="cdPlayer"></img>
+                </div>
             </div>
-            <div class="imgWrapper">
-                <img src="./pics/cd-player.png" class="cdPlayer"></img>
+            <div class="uploadSongDisplay">
+                <p class="uploadedSongs text">Uploaded Songs</p>
+                <div class="text songContainer">
+                    <div class="songContainerLeftText text">
+                        <p class="songContainerName text">name</p>
+                        <p class="songContainerArtist text">artist</p>
+                    </div>
+                    <p class="length text">length</p>
+                    <input type="checkbox">
+                </div>
             </div>
         </div>
      <div class="playerPage hidden">

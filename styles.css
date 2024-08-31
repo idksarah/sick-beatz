@@ -2,10 +2,10 @@ body {
     width: 100%;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 .content .uploadPage .playerPage{
-    height: 100vh;
     width: 100%;
     align-items: center;
     display: flex;
@@ -29,13 +29,13 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    flex-wrap: wrap;
 }
 
 .uploadButtons {
     display: flex;
     justify-content: center;
     z-index: 10;
-    margin-top: 15em;
 }
 
 .upload {
@@ -43,13 +43,13 @@ body {
 }
 
 .cdPlayer {
-    height: 90vh;
+    height: 50vh;
     width: auto;
 }
 
 .imgWrapper{
     display: inline-block;
-    margin-top: -5em;
+    padding: 5em;
 }
 
 input[type="file"] {
@@ -61,6 +61,29 @@ input[type="file"] {
     display: inline-block;
     padding: 6px 12px;
     cursor: pointer;
+}
+
+.uploadSongDisplay {
+}
+
+.uploadedSongs {
+    background-color: rgb(177, 207, 224);
+    width: 35em;
+    padding: .5em;
+}
+
+.songContainer {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.songContainerRightText, .songContainerLeftText {
+    display: flex;
+}
+
+.songContainerName, .songContainerArtist, .length {
+    padding: .5em;
 }
 
 /* playerPage */
@@ -75,6 +98,6 @@ input[type="file"] {
 }
 
 .nowPlaying {
-    background-color: rgb(177, 207, 224);
+    background-color: rgb(224, 177, 177);
     padding: .5em;
 }
