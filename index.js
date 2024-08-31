@@ -1,14 +1,16 @@
 var input = document.querySelector("#file-upload");
-var song;
+var songs = [];
+var songCounter = 0;
 function storeSong() {
     if (input.files && input.files.length > 0) {
-        song = input.files[0]; //accesses the first file
+        songs[songCounter] = input.files[0]; //accesses the first file
     }
 }
 input.addEventListener('change', function () {
     storeSong();
-    if (song) {
-        handleAudioFile(song);
+    if (songs[songCounter]) {
+        handleAudioFile(songs[songCounter]);
+        songCounter++;
     }
 });
 function handleAudioFile(file) {
