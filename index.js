@@ -19,7 +19,7 @@ function song(filename, fileURL, fileLength, artist) {
     this.artist = artist || "n/a";
 }
 function storeSong() {
-    if (input.files && input.files.length > 0) { //pretty sure this creates an extra initial file but hoenst to god i dont care rn
+    if (input.files && input.files.length > 0) {
         songList[songCounter] = input.files[0];
     }
 }
@@ -40,7 +40,7 @@ function handleAudioFile(file) {
     reader.readAsArrayBuffer(file);
 }
 function updateSongDisplays(song) {
-    console.log(song);
+    console.log(song); //not passing the song correctly? but the song itself is correct
     songContainerName.textContent = song.fileName;
     songContainerArtist.textContent = song.artist;
     songContainerLength.textContent = song.length;
@@ -53,7 +53,12 @@ input.addEventListener('change', function () {
         uploadedSongDisplay.classList.remove("hidden");
         console.log(songCounter);
         songCounter++;
-        updateSongDisplays(songListData[songCounter - 1]); //probably an issue with that stupid extra begining file??? idk lol
+        console.log(songListData); //songListData logs correctly but any info about it doesn't?
+        console.log(songListData.length);
+        console.log(songListData[0]);
+        console.log(songList);
+        console.log(songListData[songCounter]);
+        updateSongDisplays(songListData[songCounter]);
     }
 });
 doneButton.addEventListener('click', function () {
