@@ -13,6 +13,7 @@ const songContainerArtist = document.querySelector<HTMLParagraphElement>(".songC
 const songContainerLength = document.querySelector<HTMLParagraphElement>(".songContainerLength");
 
 let songList = [];
+let songListData = [];
 let songCounter = 0;
 
 function song (filename:String, fileURL:String, fileLength:number, artist = "n/a") {
@@ -40,7 +41,7 @@ function handleAudioFile(file){
             const audio = new Audio(url);
         
             audio.onloadedmetadata = function() {
-                songList[songCounter] = new song(file.name, url, length);
+                songListData[songCounter] = new song(file.name, url, length);
             };
         });
     };
@@ -59,8 +60,9 @@ input.addEventListener('change', () => {
     if(songList[songCounter]){
         handleAudioFile(songList[songCounter]);
         uploadedSongDisplay.classList.remove("hidden");
-        updateSongDisplays(songList[songCounter]); //probably an issue with that stupid extra begining file??? idk lol
+        console.log(songCounter);
         songCounter++;
+        updateSongDisplays(songListData[songCounter-1]); //probably an issue with that stupid extra begining file??? idk lol
     }
 })
 

@@ -80,6 +80,7 @@ input[type="file"] {
     background-color: rgb(177, 207, 224);
     width: 35em;
     padding: .5em;
+    margin: 0;
 }
 
 .songContainer {

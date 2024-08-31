@@ -9,6 +9,7 @@ var songContainerName = document.querySelector(".songContainerName");
 var songContainerArtist = document.querySelector(".songContainerArtist");
 var songContainerLength = document.querySelector(".songContainerLength");
 var songList = [];
+var songListData = [];
 var songCounter = 0;
 function song(filename, fileURL, fileLength, artist) {
     if (artist === void 0) { artist = "n/a"; }
@@ -32,7 +33,7 @@ function handleAudioFile(file) {
             var url = URL.createObjectURL(file);
             var audio = new Audio(url);
             audio.onloadedmetadata = function () {
-                songList[songCounter] = new song(file.name, url, length);
+                songListData[songCounter] = new song(file.name, url, length);
             };
         });
     };
@@ -50,8 +51,9 @@ input.addEventListener('change', function () {
     if (songList[songCounter]) {
         handleAudioFile(songList[songCounter]);
         uploadedSongDisplay.classList.remove("hidden");
-        updateSongDisplays(songList[songCounter]); //probably an issue with that stupid extra begining file??? idk lol
+        console.log(songCounter);
         songCounter++;
+        updateSongDisplays(songListData[songCounter - 1]); //probably an issue with that stupid extra begining file??? idk lol
     }
 });
 doneButton.addEventListener('click', function () {
